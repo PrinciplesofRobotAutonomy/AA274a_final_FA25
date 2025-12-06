@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
+dt = 0.05
+
 ### Dynamics and Measurement Equations ###
 
 def dynamics_model(
@@ -134,15 +136,15 @@ def line_following_command(
     idx = np.argmin(np.linalg.norm(line_matrix - np.array([[x],[y]]),axis=0))
     
     ####################### Code starts here #######################
-        
-
-
-
-
-
-
+    # 2. Find the positional values of the next point in the line (Hint: use the % operator to loop back around if you reach the end)
     
-        
+    # 3. Use np.arctan2() and the difference between this and the current position to determine the heading necessary to face the next point
+    
+    # 4. Calculate the omega value necessary to match this heading at the next time step
+    # HINT: the magnitude of this value depends on the time step size, "dt"
+    
+    # 5. Set the linear velocity at which the vehicle should move
+    
     ####################### Code ends here #######################
     return (v, omega)
 

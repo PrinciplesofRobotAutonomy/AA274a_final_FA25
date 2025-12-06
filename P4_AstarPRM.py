@@ -139,7 +139,7 @@ class PRM:
             ####################### Code starts here #######################
             # Identify the "k_neighbors" nearest nodes in the graph and save the connection between them if path between them is free
             # Use is_collision_free_edge(self.nodes[i],self.nodes[j]) to determine if the path between nodes "i" and "j" is clear
-            # To create a connection between node "i" and "j", set self.graph[i][j] to be the cost of their connection (do this in both directions)
+            # To create a connection between node "i" and "j", set self.graph[i][j] and self.graph[j][i] to be the distance between the nodes
             
             
             ####################### Code ends here #########################
