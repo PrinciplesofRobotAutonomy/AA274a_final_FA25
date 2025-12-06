@@ -113,7 +113,7 @@ class PRM:
             x, y, w, h = region
             pass
         
-        
+
         ####################### Code ends here #########################
 
     def is_collision_free_point(self, point):
@@ -144,7 +144,7 @@ class PRM:
         for i in range(len(self.nodes)):
             distances = np.linalg.norm(self.nodes - self.nodes[i], axis=1)
             ####################### Code starts here #######################
-            # Identify the "k_neighbors" nearest nodes in the graph and save the connection between them if path between them is free
+            # Identify the "k_neighbors" nearest nodes in the graph and for each, save the connection between it and the current node if path between them is free
             # Use is_collision_free_edge(self.nodes[i],self.nodes[j]) to determine if the path between nodes "i" and "j" is clear
             # To create a connection between node "i" and "j", set self.graph[i][j] and self.graph[j][i] to be the distance between the nodes
             
