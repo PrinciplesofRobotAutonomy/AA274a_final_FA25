@@ -102,12 +102,19 @@ class PRM:
         self.nodes, self.graph, self.path = [], {}, None
 
     def get_terrain_type(self, point):
-        """Returns the terrain type for a given point. Default is WATER."""
+        """Returns the terrain type for a given point."""
+        ####################### Code starts here #######################
+        # The function must return TERRAIN_GROUND if the query point "point" is contained within an island and return "TERRAIN_WATER" otherwise
+        # point[0]: horizontal position of point, point[1]: vertical position of point
+        # Each (rectangular) island is defined with four values:
+        # x, y: x and y positions of lower left vertex
+        # w, h: width and height of island
         for region in self.ground_regions:
             x, y, w, h = region
-            if x <= point[0] <= x + w and y <= point[1] <= y + h:
-                return TERRAIN_GROUND # Point is located on an island
-        return TERRAIN_WATER # Default is water
+            pass
+        
+        
+        ####################### Code ends here #########################
 
     def is_collision_free_point(self, point):
         ####################### Code starts here #######################
