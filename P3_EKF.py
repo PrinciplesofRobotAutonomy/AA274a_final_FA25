@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-dt = 0.05
+dt = 0.05 # discrete time step size (seconds)
 
 ### Dynamics and Measurement Equations ###
 
@@ -132,21 +132,22 @@ def line_following_command(
 
     N = np.shape(line_matrix)[1] #number of positions in the matrix describing the line
     
-    # 1. Identify the index position of the closest point in the line to the input position
+    # Identify the index position of the closest point in the line to the input position
     idx = np.argmin(np.linalg.norm(line_matrix - np.array([[x],[y]]),axis=0))
     
     ####################### Code starts here #######################
-    # 2. Find the positional values of the next point in the line (Hint: use the % operator to loop back around if you reach the end)
-    
-    # 3. Use np.arctan2() and the difference between this and the current position to determine the heading necessary to face the next point
-    
-    # 4. Calculate the omega value necessary to match this heading at the next time step
-    # HINT: the magnitude of this value depends on the time step size, "dt"
-    
-    # 5. Set the linear velocity at which the vehicle should move
+    # Look up the positional values of the next point in the line, and set "v" and "omega" to face it and approach it
+    # Hints:
+    ## The waypoints in "line_matrix" are in sequential order, and run in a continuous loop
+    ## To use the time step size to adjust the magnitude of a control input, it can be found near the top of this file
+
+
+
+
+
     
     ####################### Code ends here #######################
-    return (v, omega)
+    return (v, omega) # m/s, rad/s
 
 ### Plot Results ###
 

@@ -51,8 +51,8 @@ class AStarGraphSolver:
         type2 = self.terrain_lookup_func(self.nodes[idx2])
 
         ####################### Code starts here #######################
-        # geometric_cost is the distance value to be multiplied by the relevant value
-        # type1 and type2 will return values equal to TERRAIN_GROUND or TERRAIN_WATER, seen above
+        # geometric_cost is the distance value saved in the graph connection
+        # type1 and type2 will have values equal to TERRAIN_GROUND or TERRAIN_WATER, seen above
 
 
 
@@ -105,10 +105,10 @@ class PRM:
         """Returns the terrain type for a given point."""
         ####################### Code starts here #######################
         # The function must return TERRAIN_GROUND if the query point "point" is contained within an island and return "TERRAIN_WATER" otherwise
-        # point[0]: horizontal position of point, point[1]: vertical position of point
+        # point[0]: horizontal position of point; point[1]: vertical position of point
         # Each (rectangular) island is defined with four values:
-        # x, y: x and y positions of lower left vertex
-        # w, h: width and height of island
+        ## x, y: x and y positions of lower left vertex
+        ## w, h: width and height of island
         for region in self.ground_regions:
             x, y, w, h = region
             pass
@@ -144,9 +144,9 @@ class PRM:
         for i in range(len(self.nodes)):
             distances = np.linalg.norm(self.nodes - self.nodes[i], axis=1)
             ####################### Code starts here #######################
-            # Identify the "k_neighbors" nearest nodes in the graph and for each, save the connection between it and the current node if path between them is free
+            # Identify the "k_neighbors" nearest nodes in the graph and connect to each one, skipping a connection if the path between the nodes is not clear
             # Use is_collision_free_edge(self.nodes[i],self.nodes[j]) to determine if the path between nodes "i" and "j" is clear
-            # To create a connection between node "i" and "j", set self.graph[i][j] and self.graph[j][i] to be the distance between the nodes
+            # To create a connection between nodes "i" and "j", set self.graph[i][j] and self.graph[j][i] to be the distance between the nodes
             
             
             ####################### Code ends here #########################
